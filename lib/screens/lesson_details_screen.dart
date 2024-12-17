@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
-import '../models/lesson.dart';  // Import the Lesson model
-import 'start_lesson_screen.dart'; // Import StartLessonScreen
+import '../models/lesson.dart';
 
 class LessonDetailScreen extends StatefulWidget {
   final Lesson lesson;
@@ -14,7 +13,6 @@ class LessonDetailScreen extends StatefulWidget {
 
 class _LessonDetailScreenState extends State<LessonDetailScreen> {
   late YoutubePlayerController _controller;
-  bool _isVideoInitialized = false;
 
   @override
   void initState() {
@@ -43,10 +41,11 @@ class _LessonDetailScreenState extends State<LessonDetailScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-        title: Text(widget.lesson.title),  // Display the lesson title in the AppBar
-    ),
-    body: SingleChildScrollView(
-    padding: const EdgeInsets.all(20.0),
+          title: Text(widget.lesson.title),  // Display the lesson title in the AppBar
+          backgroundColor: Colors.green,
+        ),
+        body: SingleChildScrollView(
+        padding: const EdgeInsets.all(20.0),
     child: Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
@@ -56,6 +55,7 @@ class _LessonDetailScreenState extends State<LessonDetailScreen> {
     style: TextStyle(
     fontSize: 24,
     fontWeight: FontWeight.bold,
+    color: Colors.black87,
     ),
     ),
     SizedBox(height: 10),
@@ -76,44 +76,32 @@ class _LessonDetailScreenState extends State<LessonDetailScreen> {
     showVideoProgressIndicator: true,  // Display the video progress indicator
     onReady: () {
     // Video is ready, you can do additional actions
-    setState(() {
-    _isVideoInitialized = true;
-    });
+    setState(() {});
     },
     ),
     SizedBox(height: 20),
 
-    // Additional content (optional)
+    // Lesson Content (Overview)
     Text(
-    'Lesson Details:',
+    'Lesson Overview:',
     style: TextStyle(
     fontSize: 20,
     fontWeight: FontWeight.bold,
+    color: Colors.green,
     ),
     ),
     SizedBox(height: 10),
     Text(
-    'This is additional content for the lesson. You can add more resources, explanations, or instructions here.',
-    style: TextStyle(fontSize: 16, color: Colors.black54),
+    widget.lesson.content,  // Display the lesson content here
+    style: TextStyle(
+    fontSize: 16,
+    color: Colors.black87,
     ),
-    SizedBox(height: 20),
-
-    // Start Lesson Button
-    ElevatedButton(
-    onPressed: () {
-    // Navigate to the Start Lesson Screen or perform the lesson start action
-    Navigator.push(
-    context,
-    MaterialPageRoute(
-    builder: (context) => StartLessonScreen(lesson: widget.lesson),
     ),
-    );
-    },
-      child: Text('Start Lesson'),
-    ),
+      SizedBox(height: 20),
     ],
     ),
-    ),
+        ),
     );
   }
 }

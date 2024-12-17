@@ -1,7 +1,7 @@
+import 'package:course_learning/screens/community_screen.dart';
 import 'package:course_learning/screens/course_list.dart';
 import 'package:course_learning/screens/home_scree.dart';
 import 'package:flutter/material.dart';
-import 'screens/profile_screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -16,7 +16,7 @@ class _MyAppState extends State<MyApp> {
   static List<Widget> _screens = <Widget>[
     HomeScreen(),
     CourseListScreen(),
-    ProfileScreen(),
+    CommunityScreen(),
   ];
 
   void _onItemTapped(int index) {
@@ -47,8 +47,8 @@ class _MyAppState extends State<MyApp> {
               label: 'Courses',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.account_circle),
-              label: 'Profile',
+              icon: Icon(Icons.group),
+              label: 'Community',
             ),
           ],
         ),
