@@ -9,17 +9,17 @@ class CourseListScreen extends StatelessWidget {
       title: 'Flutter Basics',
       description: 'Learn the basics of Flutter development.',
       lessons: [
-        Lesson(title: 'Introduction to Flutter', description: 'Basic setup and introduction'),
-        Lesson(title: 'Flutter Widgets', description: 'Learn about Flutter widgets'),
-        Lesson(title: 'State Management', description: 'Managing state in Flutter'),
+        Lesson(title: 'Introduction to Flutter', description: 'Basic setup and introduction', videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'),
+        Lesson(title: 'Flutter Widgets', description: 'Learn about Flutter widgets', videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'),
+        Lesson(title: 'State Management', description: 'Managing state in Flutter', videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'),
       ],
     ),
     Course(
       title: 'Advanced Flutter',
       description: 'Deep dive into advanced Flutter concepts.',
       lessons: [
-        Lesson(title: 'Flutter Animations', description: 'Learn animations in Flutter'),
-        Lesson(title: 'Flutter Firebase', description: 'Integrating Firebase with Flutter'),
+        Lesson(title: 'Flutter Animations', description: 'Learn animations in Flutter', videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'),
+        Lesson(title: 'Flutter Firebase', description: 'Integrating Firebase with Flutter', videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'),
       ],
     ),
   ];
